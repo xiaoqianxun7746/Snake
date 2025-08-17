@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>贪吃蛇游戏</h1>
+        
+        <!-- 游戏模式选择界面 -->
+        <div id="menu" class="menu">
+            <div class="menu-buttons">
+                <button id="singlePlayer" class="menu-btn">单人游戏</button>
+                <button id="multiPlayer" class="menu-btn">双人游戏</button>
+            </div>
+            <div class="instructions">
+                <h3>游戏说明</h3>
+                <p><strong>单人模式：</strong>使用方向键控制蛇的移动</p>
+                <p><strong>双人模式：</strong></p>
+                <p>玩家1：WASD键控制 | 玩家2：方向键控制</p>
+                <p><strong>新特性：</strong></p>
+                <p>🌈 蛇身渐变色效果</p>
+                <p>🔄 边界穿越（从对侧出现）</p>
+                <p>🍎 不同颜色食物提供不同积分（金色10分，橙色20分，紫色50分）</p>
+                <p>💚 双人模式：绿色复活食物可以复活死亡的队友</p>
+                <p>⏸️ 按空格键暂停/继续游戏</p>
+            </div>
+        </div>
+
+        <!-- 游戏界面 -->
+        <div id="gameArea" class="game-area hidden">
+            <div class="game-header">
+                <div class="score-board">
+                    <div id="player1Score" class="score">
+                        <span class="player-name">玩家1</span>
+                        <span class="score-value">0</span>
+                    </div>
+                    <div id="player2Score" class="score hidden">
+                        <span class="player-name">玩家2</span>
+                        <span class="score-value">0</span>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button id="pauseBtn" class="control-btn">暂停</button>
+                    <button id="restartBtn" class="control-btn">重新开始</button>
+                    <button id="backToMenu" class="control-btn">返回菜单</button>
+                </div>
+            </div>
+            <canvas id="gameCanvas" width="600" height="400"></canvas>
+            <div id="gameStatus" class="game-status"></div>
+        </div>
+
+        <!-- 游戏结束界面 -->
+        <div id="gameOver" class="game-over hidden">
+            <h2>游戏结束</h2>
+            <div id="finalScore" class="final-score"></div>
+            <div class="game-over-buttons">
+                <button id="playAgain" class="menu-btn">再玩一次</button>
+                <button id="backToMenuFromGameOver" class="menu-btn">返回菜单</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
